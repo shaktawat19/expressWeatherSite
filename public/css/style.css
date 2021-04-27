@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Piazzolla:wght@900&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Piazzolla', serif;
+}
+
+:root{
+  --main-bg: #1e272e;
+  --main-color:#0097e6;
+}
+html{
+  font-size:62.5%; 
+  /* 1 rem=10px */
+}
+body{
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+}
+.main_menu{
+  background-color: var(--main-bg);
+}
+.navbar{
+  color:#fff;
+  /* background-color: var(--main-bg); */
+  padding:2rem 0;
+}
+.navbar a{
+  color:#fff;
+  font-size:1.8rem;
+}
+.navbar a:hover{
+  color:var(--main-color);
+}
+.navbar-toggler{
+  background-color: grey;
+}
+.navbar li{
+  margin-left: 2rem;
+}
+.fa-snowflake{
+  transition:all linear;
+  animation:rot 5s linear infinite;
+  color:var(--main-color);
+}
+@keyframes rot {
+  0%{
+    transform: rotate(0deg);
+  }
+  10%{
+    transform: rotate(360deg);
+  }
+}
+
+.main_header_left{
+  height: 40rem;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+ 
+}
+.main_header_right{
+  height: 40rem;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+ 
+}
+.main_header_right figure img{
+  filter:drop-shadow(0.5rem 0.5rem .6rem var(--main-color));
+ 
+}
+.main_header_left h1{
+  font-size: 4rem;
+  margin-bottom:4rem;
+  text-transform: capitalize;
+}
+.main_header_left p{
+  font-size: 2rem;
+  margin-bottom:2rem;
+  text-transform: capitalize;
+}
+.main_header_left .txt_clr{
+  color:var(--main-color);
+}
+.main_header_left button{
+  border:none;
+  padding:.8rem 1.8rem;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  box-shadow:0 8px 6px -6px #000;
+  outline:none;
+}
+.main_header_left button:hover{
+  box-shadow:0 8px 6px -6px var(--main-color);
+ 
+}
+.main_header_left p,
+.main_header_left h1,
+footer p
+{
+  word-spacing: .4rem;
+}
+/* Weather specific css */
+.temp-info{
+  width: 40rem;
+  margin:auto;
+  background-color: #323544;
+  min-height: 20rem;
+  border-radius: 1rem;
+  /* padding: 1rem; */
+}
+.top-layer{
+  width:100%;
+  height:20%;
+  display: flex;
+  background-color:#232630 ;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1rem;
+
+}
+.top-layer p{
+  color:#fff;
+  font-weight: 300;
+  padding:2rem;
+  font-size: 1.4rem;
+}
+.main-layer{
+  width:100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  padding:2rem;
+}
+.main-layer #city-name{
+  padding:2rem 0;
+  color:#bfc1c8;
+  font-weight: 300;
+  font-size: 2rem;
+}
+.main-layer .middle-layer{
+  display: flex;
+  justify-content: space-around;
+  color:#fff;
+}
+.main-layer .middle-layer p,
+.main-layer .middle-layer .fa{
+  font-size: 5rem;
+  font-weight: 900;
+}
+.data-hide{
+  visibility: hidden;
+  transition:all .3s linear;
+}
+
+.temp-form{
+  width:60%;
+  position: relative;
+  margin:5rem auto 6rem;
+}
+.temp-form input[type="text"]{
+  width:100%;
+  padding:2rem 5rem 2rem 2rem;
+  background:#1e202b;
+  color:#fff;
+  outline:none;
+  border:none;
+  font-size: 1.7rem;
+  border-radius: 3rem;
+
+}
+::placeholder{
+  color:#bfc1c8;
+}
+.temp-form input[type="submit"]{
+  position:absolute;
+  top:5px;
+  right:5px;
+  bottom:5px;
+  border:none;
+  background-color:#009ad8;
+  padding:0 3rem;
+  border-radius: 3rem;
+  color:#fff;
+  font-size: 1.6rem;
+}
+.temp-form input[type="submit"]:hover{
+  color:#009ad8;
+  background: #fff;
+}
+
+
+/* background images */
+#img1{
+  position:absolute;
+  top:0;
+  left:0;
+  z-index: -1;
+  height: 100vh;
+  width: 100%;
+  
+}
+
+
+
+/* footer Code */
+footer{
+ width:100%;
+ margin-top: auto;
+ background-color: var(--main-bg);
+}
+footer p{
+  text-align: center;
+  color:#fff;
+  font-size: 1.4rem;
+  margin:0;
+  line-height: 5rem;
+}
+
+/* media queries */
+@media(max-width:425px){
+  .temp-form{
+    width:auto;
+  }
+  .temp-info{
+    width:auto;
+  }
+}
+@media(max-width:768px){
+  .main_header_left{
+    height: auto;
+    margin:5rem 0;
+  }
+  .main_header_right{
+    height: auto;
+    margin-top:3rem ;
+  }
+  .index-right{
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media(max-width:1440px){
+  .temp-info{
+    margin-bottom:3rem;
+  }
+}
