@@ -16,7 +16,7 @@ const getInfo=async(event)=>{
   }
   else{
     try{
-    let url=`http://api.openweathermap.org/data/2.5/weather?q=${cityVal}&appid=3b7debfbbe38135147fc80eab35bdfcc`;
+    let url=`https://weather-expressjs-harsh.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${cityVal}&appid=3b7debfbbe38135147fc80eab35bdfcc`;
     const response=await fetch(url);
     const data=await response.json();
     const arrData=[data];
@@ -44,8 +44,12 @@ const getInfo=async(event)=>{
     temp_status.innerText="Cloudy";     //"<i class="fas fa-cloud"></i>"
     }
     dataHide.classList.remove('data-hide');
-    }// try block ends
-    catch(err){
+    
+    
+  
+  
+  }// try block ends
+    catch{
       city_name.innerText=" City name incorrect";
       dataHide.classList.add('data-hide');
     }// catch ends
@@ -99,3 +103,5 @@ const day=document.getElementById('day');
 const today=document.getElementById('today-data');
   day.innerText= getCurrentDay();
   today.innerText=getCurrTime();
+
+
